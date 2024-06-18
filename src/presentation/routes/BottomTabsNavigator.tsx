@@ -2,10 +2,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabScreen1} from '../screens/tabs/TabScreen1';
 // import {TabScreen2} from '../screens/tabs/TabScreen2';
 // import {TabScreen3} from '../screens/tabs/TabScreen3';
-import {Text} from 'react-native';
 import {globalColors} from '../theme/theme';
 import {MaterialTopTabNavigator} from './MaterialTopTabNavigator';
 import {StackNavigator} from './StackNavigator';
+import {IonicIcon} from '../components/shared/IonicIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,12 +25,15 @@ export const BottomTabsNavigator = () => {
           borderTopWidth: 0,
           elevation: 0,
         },
+        tabBarActiveTintColor: globalColors.primary,
       }}>
       <Tab.Screen
         name="Tab1"
         options={{
           title: 'Tab1',
-          tabBarIcon: ({color}) => <Text style={{color}}>Tab1Icon </Text>,
+          tabBarIcon: ({color}) => (
+            <IonicIcon name="calendar-outline" color={color} />
+          ),
         }}
         component={TabScreen1}
       />
@@ -38,7 +41,9 @@ export const BottomTabsNavigator = () => {
         name="Tab2"
         options={{
           title: 'Tab2',
-          tabBarIcon: ({color}) => <Text style={{color}}>Tab2Icon </Text>,
+          tabBarIcon: ({color}) => (
+            <IonicIcon name="calendar-number-outline" color={color} />
+          ),
         }}
         component={MaterialTopTabNavigator}
       />
@@ -46,7 +51,9 @@ export const BottomTabsNavigator = () => {
         name="Tab3"
         options={{
           title: 'Tab3',
-          tabBarIcon: ({color}) => <Text style={{color}}>Tab3Icon </Text>,
+          tabBarIcon: ({color}) => (
+            <IonicIcon name="calendar-clear-outline" color={color} />
+          ),
         }}
         component={StackNavigator}
       />
