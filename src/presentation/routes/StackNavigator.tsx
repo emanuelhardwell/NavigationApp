@@ -3,8 +3,16 @@ import React from 'react';
 import {HomeScreen} from '../screens/home/HomeScreen';
 import {ProductsScreen} from '../screens/products/ProductsScreen';
 import {SettingsScreen} from '../screens/settings/SettingsScreen';
-import { ProductScreen } from '../screens/products/ProductScreen';
-const Stack = createStackNavigator();
+import {ProductScreen} from '../screens/products/ProductScreen';
+
+export type RootStackParams = {
+  Home: undefined;
+  Products: undefined;
+  Product: {id: string; name: string};
+  Settings: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
   return (
