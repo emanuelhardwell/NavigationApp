@@ -4,10 +4,11 @@ import {
   DrawerItemList,
   createDrawerNavigator,
 } from '@react-navigation/drawer';
-import {StackNavigator} from './StackNavigator';
+// import {StackNavigator} from './StackNavigator';
 import {ProfileScreen} from '../screens/profile/ProfileScreen';
 import {globalColors} from '../theme/theme';
 import {Text, View, useWindowDimensions} from 'react-native';
+import {BottomTabsNavigator} from './BottomTabsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -29,7 +30,8 @@ export const SideMenuDrawerNavigator = () => {
           borderRadius: 100,
         },
       }}>
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
+      <Drawer.Screen name="Tap" component={BottomTabsNavigator} />
       <Drawer.Screen name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
   );
